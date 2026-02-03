@@ -1,5 +1,31 @@
+import { useState, useEffect } from 'react';
 
 const Identification = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        if (!isModalOpen) return;
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'ArrowLeft') setCurrentSlide((prev) => (prev === 0 ? 9 : prev - 1));
+            if (e.key === 'ArrowRight') setCurrentSlide((prev) => (prev + 1) % 10);
+            if (e.key === 'Escape') setIsModalOpen(false);
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isModalOpen]);
+
+    // Auto-advance carousel
+    useEffect(() => {
+        if (isModalOpen) return;
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % 10);
+        }, 4000); // Change slide every 4 seconds
+
+        return () => clearInterval(timer);
+    }, [isModalOpen]);
     return (
         <section id="sobre" className="py-20 md:py-32 bg-gray-900 relative overflow-hidden">
             {/* Background Texture/Gradient */}
@@ -9,14 +35,36 @@ const Identification = () => {
                 {/* Desktop Layout: Deep Overlap Design */}
                 <div className="flex flex-col lg:block relative">
 
-                    {/* Image Layer (Background/Right on Desktop) */}
-                    <div className="relative w-full lg:w-[65%] lg:ml-auto aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
-                        <div className="absolute inset-0 bg-gray-900/20 mix-blend-multiply z-10 transition-opacity duration-700 group-hover:opacity-0" />
-                        <img
-                            src="/imgs/img-section2.JPEG"
-                            alt="Ambiente planejado Studio Katto"
-                            className="w-full h-full object-cover"
-                        />
+                    {/* Image Layer (Carousel) */}
+                    <div className="relative w-full lg:w-[65%] lg:ml-auto aspect-[4/3] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl group">
+                        <div className="absolute inset-0 bg-gray-900/20 mix-blend-multiply z-10 pointer-events-none" />
+
+                        {/* Carousel Images */}
+                        {Array.from({ length: 10 }).map((_, index) => (
+                            <img
+                                key={index}
+                                src={`/imgs/carrossel-section2/img${index + 1}-carrossel.JPEG`}
+                                alt={`Ambiente planejado ${index + 1}`}
+                                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out cursor-pointer ${currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                                    }`}
+                                onClick={() => setIsModalOpen(true)}
+                            />
+                        ))}
+
+                        {/* Navigation Dots */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                            {Array.from({ length: 10 }).map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setCurrentSlide(index)}
+                                    className={`w-2 h-2 rounded-full transition-all duration-300 ${currentSlide === index
+                                        ? 'bg-white w-6'
+                                        : 'bg-white/50 hover:bg-white/80'
+                                        }`}
+                                    aria-label={`Ir para imagem ${index + 1}`}
+                                />
+                            ))}
+                        </div>
                     </div>
 
                     {/* Content Layer (Floating Card on Desktop) */}
@@ -59,6 +107,64 @@ const Identification = () => {
 
                 </div>
             </div>
+
+            {/* Lightbox Modal */}
+            {isModalOpen && (
+                <div
+                    className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300"
+                    onClick={() => setIsModalOpen(false)}
+                >
+                    {/* Close Button */}
+                    <button
+                        className="absolute top-6 right-6 text-white hover:text-katto-gold transition-all duration-300 p-2 hover:scale-110 active:scale-95 z-50 bg-black/20 rounded-full backdrop-blur-sm"
+                        onClick={() => setIsModalOpen(false)}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-10 h-10 md:w-12 md:h-12 shadow-lg">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    {/* Previous Button */}
+                    <button
+                        className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white hover:text-katto-green transition-all duration-300 p-4 bg-black/30 hover:bg-black/80 rounded-full hover:scale-110 active:scale-95 backdrop-blur-sm z-50 group border border-white/10"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentSlide((prev) => (prev === 0 ? 9 : prev - 1));
+                        }}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 md:w-10 md:h-10 drop-shadow-lg group-hover:-translate-x-1 transition-transform">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+
+                    {/* Next Button */}
+                    <button
+                        className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white hover:text-katto-green transition-all duration-300 p-4 bg-black/30 hover:bg-black/80 rounded-full hover:scale-110 active:scale-95 backdrop-blur-sm z-50 group border border-white/10"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentSlide((prev) => (prev + 1) % 10);
+                        }}
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 md:w-10 md:h-10 drop-shadow-lg group-hover:translate-x-1 transition-transform">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+
+                    <div
+                        className="relative max-w-6xl max-h-[90vh] w-full h-full flex items-center justify-center p-2"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <img
+                            src={`/imgs/carrossel-section2/img${currentSlide + 1}-carrossel.JPEG`}
+                            alt={`Ambiente planejado ${currentSlide + 1}`}
+                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-fadeIn"
+                        />
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 px-6 py-2 rounded-full text-white font-medium backdrop-blur-md shadow-lg border border-white/10">
+                            {currentSlide + 1} / 10
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };
