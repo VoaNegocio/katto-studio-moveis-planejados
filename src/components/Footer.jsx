@@ -4,7 +4,14 @@ const Footer = () => {
     return (
         <footer className="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
             <div className="max-w-7xl mx-auto px-4 flex flex-col items-center text-center gap-6">
-                <img src="/logo/logo-katto.png" alt="Studio Katto" className="h-10 w-auto opacity-80 grayscale hover:grayscale-0 transition-all cursor-pointer" />
+                {/* Brand */}
+                <div className="flex flex-col items-center md:items-start">
+                    <img
+                        src="/logo/logo-katto.webp"
+                        alt="Studio Katto"
+                        className="h-12 w-auto mb-4 opacity-90"
+                    />
+                </div>
 
                 <p className="text-sm md:text-base max-w-md mx-auto">
                     Móveis Planejados em Brasília. Especialistas em cozinhas sob medida.

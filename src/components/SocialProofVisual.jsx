@@ -1,14 +1,36 @@
-
 import { useState } from 'react';
 
 const SocialProofVisual = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const reviews = [
-        { src: "/depoimentos-google/depoimentogoogle-bianka.png", alt: "Depoimento Bianka Berlinck" },
-        { src: "/depoimentos-google/depoimentogoogle-renata.png", alt: "Depoimento Renata Ferreira" },
-        { src: "/depoimentos-google/depoimentogoogle-jomar.png", alt: "Depoimento Jomar Andrade" },
-        { src: "/depoimentos-google/depoimentogoogle-luciana.png", alt: "Depoimento Luciana Santana" },
+    const testimonials = [
+        {
+            name: "Victor Hugo - Pezao",
+            role: "Cliente Residencial",
+            location: "Miguelipolis",
+            image: "/depoimentos-google/depoimentogoogle-jomar.webp", // Using Jomar's image as placeholder for now or if intended
+            content: "Excelente atendimento! Profissionais super qualificados e atenciosos. Meus móveis ficaram perfeitos, exatamente como eu queria. Recomendo de olhos fechados!",
+            stars: 5,
+            date: "Há 2 meses"
+        },
+        {
+            name: "Antônio Carlos de Souza Junior - Bilim",
+            role: "Cliente Residencial",
+            location: "Ituverava",
+            image: "/depoimentos-google/depoimentogoogle-renata.webp", // Using Renata's image as placeholder
+            content: "A qualidade dos móveis é impressionante. O acabamento é impecável e a montagem foi super rápida e limpa. Estou muito satisfeito com o resultado final.",
+            stars: 5,
+            date: "Há 1 mês"
+        },
+        {
+            name: "Eclesiastes Marques",
+            role: "Cliente Comercial",
+            location: "Ituverava",
+            image: "/depoimentos-google/depoimentogoogle-luciana.webp", // Using Luciana's image as placeholder
+            content: "Contratei o Studio Katto para o meu escritório e foi a melhor escolha. O projeto ficou moderno e funcional, otimizando muito o espaço. Parabéns a toda equipe!",
+            stars: 5,
+            date: "Há 3 semanas"
+        }
     ];
 
     return (
@@ -19,16 +41,16 @@ const SocialProofVisual = () => {
                 </h2>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-center justify-center">
-                    {reviews.map((review, index) => (
+                    {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
                             className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 cursor-zoom-in"
-                            onClick={() => setSelectedImage(review)}
+                            onClick={() => setSelectedImage({ src: testimonial.image, alt: testimonial.name })}
                         >
                             <img
-                                src={review.src}
-                                alt={review.alt}
-                                className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                                src={testimonial.image}
+                                alt={testimonial.name}
+                                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                             />
                         </div>
                     ))}

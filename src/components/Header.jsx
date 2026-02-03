@@ -28,11 +28,11 @@ const Header = () => {
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-                {/* Logo */}
-                <div className="flex items-center">
+                {/* Logo Area */}
+                <div className="flex items-center gap-2">
                     <img
-                        src="/logo/logo-katto.png"
-                        alt="Studio Katto"
+                        src="/logo/logo-katto.webp"
+                        alt="Studio Katto Logo"
                         className={`h-16 w-auto object-contain transition-all duration-300`}
                     />
                 </div>

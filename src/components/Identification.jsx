@@ -55,7 +55,7 @@ const Identification = () => {
                         {Array.from({ length: 10 }).map((_, index) => (
                             <img
                                 key={index}
-                                src={`/imgs/carrossel-section2/img${index + 1}-carrossel.JPEG`}
+                                src={`/imgs/carrossel-section2/img${index + 1}-carrossel.webp`}
                                 alt={`Ambiente planejado ${index + 1}`}
                                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out cursor-pointer ${currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
                                     }`}
@@ -167,7 +167,7 @@ const Identification = () => {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <img
-                            src={`/imgs/carrossel-section2/img${currentSlide + 1}-carrossel.JPEG`}
+                            src={`/imgs/carrossel-section2/img${currentSlide + 1}-carrossel.webp`}
                             alt={`Ambiente planejado ${currentSlide + 1}`}
                             className="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-fadeIn"
                         />
