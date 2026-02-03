@@ -36,7 +36,7 @@ const SocialProofVisual = () => {
 
                 <div className="mt-12">
                     <a
-                        href="https://wa.me/5561999999999"
+                        href="https://wa.me/556198174888?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20m%C3%B3veis%20planejados."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-katto-green to-katto-green-dark text-white rounded-full font-bold text-lg shadow-xl shadow-katto-green/30 hover:shadow-2xl hover:shadow-katto-green/50 hover:scale-105 transition-all duration-300 overflow-hidden"

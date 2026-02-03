@@ -58,6 +58,18 @@ const Differentials = () => {
                         </div>
                     ))}
                 </div>
+
+                <div className="mt-16 text-center">
+                    <a
+                        href="https://wa.me/556198174888?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20m%C3%B3veis%20planejados."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-katto-green to-katto-green-dark text-white rounded-full font-bold text-lg shadow-lg shadow-katto-green/20 hover:shadow-xl hover:shadow-katto-green/40 hover:scale-105 transition-all duration-300 overflow-hidden"
+                    >
+                        <span className="relative z-10">Quero um Projeto Assim</span>
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shine" />
+                    </a>
+                </div>
             </div>
         </section>
     );

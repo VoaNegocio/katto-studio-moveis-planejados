@@ -9,6 +9,8 @@ import CTASection from './components/CTASection';
 import SocialProofVisual from './components/SocialProofVisual';
 import Footer from './components/Footer';
 
+import Gallery from './components/Gallery';
+
 function App() {
   return (
     <div className="bg-gray-50 min-h-screen font-sans">
@@ -18,6 +20,7 @@ function App() {
         <Identification />
         <Authority />
         <Differentials />
+        <Gallery />
         <FeaturedTestimonial />
         <AntiObjection />
         <CTASection />

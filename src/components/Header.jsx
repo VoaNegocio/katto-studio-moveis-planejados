@@ -23,8 +23,8 @@ const Header = () => {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'bg-gray-900/80 backdrop-blur-md shadow-lg py-4 border-b border-white/5'
-                : 'bg-transparent py-6'
+                ? 'bg-gray-900/80 backdrop-blur-md shadow-lg py-2 border-b border-white/5'
+                : 'bg-transparent py-4'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
@@ -33,7 +33,7 @@ const Header = () => {
                     <img
                         src="/logo/logo-katto.png"
                         alt="Studio Katto"
-                        className={`h-12 w-auto object-contain transition-all duration-300`}
+                        className={`h-16 w-auto object-contain transition-all duration-300`}
                     />
                 </div>
 
@@ -50,7 +50,9 @@ const Header = () => {
                         </a>
                     ))}
                     <a
-                        href="#contato"
+                        href="https://wa.me/556198174888?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20m%C3%B3veis%20planejados."
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group relative px-6 py-2.5 bg-gradient-to-r from-katto-green to-katto-green-dark text-white rounded-full font-medium text-sm shadow-lg shadow-katto-green/20 hover:shadow-katto-green/40 hover:scale-105 transition-all duration-300 overflow-hidden"
                     >
                         <span className="relative z-10">Falar no WhatsApp</span>
@@ -89,7 +91,9 @@ const Header = () => {
                         </a>
                     ))}
                     <a
-                        href="#contato"
+                        href="https://wa.me/556198174888?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20m%C3%B3veis%20planejados."
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="relative text-center py-3 bg-gradient-to-r from-katto-green to-katto-green-dark text-white rounded-lg font-bold shadow-lg shadow-katto-green/20 overflow-hidden group"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >

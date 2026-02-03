@@ -25,11 +25,12 @@ const FeaturedTestimonial = () => {
                         <video
                             ref={videoRef}
                             src="/videos/depoimentos-cliente.mp4"
-                            className="w-full h-full object-cover" // object-cover fills the area, might crop. Can change to contain if needed.
-                            controls={false} // Custom controls
+                            className="w-full h-full object-cover cursor-pointer" // cursor-pointer indicates interactivity
+                            controls={isPlaying} // Native controls enabled only when playing
                             playsInline
                             onPlay={() => setIsPlaying(true)}
                             onPause={() => setIsPlaying(false)}
+                            onClick={handlePlay} // Allows clicking video to play (if controls are hidden/not capturing click)
                         >
                             Seu navegador não suporta a tag de vídeo.
                         </video>
@@ -75,6 +76,18 @@ const FeaturedTestimonial = () => {
                             </div>
                         )}
                     </div>
+                </div>
+
+                <div className="mt-12 text-center">
+                    <a
+                        href="https://wa.me/556198174888?text=Ol%C3%A1%21%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20m%C3%B3veis%20planejados."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-katto-green to-katto-green-dark text-white rounded-full font-bold text-lg shadow-lg shadow-katto-green/20 hover:shadow-xl hover:shadow-katto-green/40 hover:scale-105 transition-all duration-300 overflow-hidden"
+                    >
+                        <span className="relative z-10">Ver Mais Resultados</span>
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full animate-shine" />
+                    </a>
                 </div>
             </div>
         </section>
