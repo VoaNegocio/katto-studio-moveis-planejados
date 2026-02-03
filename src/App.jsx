@@ -20,7 +20,6 @@ function App() {
         <Identification />
         <Authority />
         <Differentials />
-        <Gallery />
         <FeaturedTestimonial />
         <AntiObjection />
         <CTASection />

@@ -17,6 +17,18 @@ const Identification = () => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [isModalOpen]);
 
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isModalOpen]);
+
     // Auto-advance carousel
     useEffect(() => {
         if (isModalOpen) return;
