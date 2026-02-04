@@ -7,7 +7,7 @@ const Footer = () => {
                 {/* Brand */}
                 <div className="flex flex-col items-center md:items-start">
                     <img
-                        src="/logo/logo-katto.webp"
+                        src="/logo/logo-katto2.png"
                         alt="Studio Katto"
                         className="h-12 w-auto mb-4 opacity-90"
                     />

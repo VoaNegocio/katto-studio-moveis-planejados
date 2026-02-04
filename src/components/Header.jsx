@@ -31,7 +31,7 @@ const Header = () => {
                 {/* Logo Area */}
                 <div className="flex items-center gap-2">
                     <img
-                        src="/logo/logo-katto.webp"
+                        src="/logo/logo-katto2.png"
                         alt="Studio Katto Logo"
                         className={`h-16 w-auto object-contain transition-all duration-300`}
                     />
