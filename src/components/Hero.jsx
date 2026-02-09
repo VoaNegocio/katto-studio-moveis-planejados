@@ -42,7 +42,7 @@ const Hero = () => {
                     {/* Content Block */}
                     <div className="flex-1 text-center lg:text-left">
                         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-[1.1] mb-8 tracking-tight">
-                            Cozinha Planejada de <span className="text-katto-green">Alto Padrão</span> em Brasília, com Entrega em até <span className="relative whitespace-nowrap"><span className="relative z-10">30 Dias Úteis</span><span className="absolute bottom-1 left-0 right-0 h-3 bg-katto-gold/40 -rotate-1 z-0"></span></span>
+                            Cozinha Planejada de <span className="text-katto-green">Alto Padrão</span> em Brasília, com Entrega em até <span className="relative whitespace-nowrap"><span className="relative z-10">40 Dias Úteis</span><span className="absolute bottom-1 left-0 right-0 h-3 bg-katto-gold/40 -rotate-1 z-0"></span></span>
                         </h1>
 
                         {/* Mobile Image Position (Between H1 and P) */}
