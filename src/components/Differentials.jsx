@@ -8,7 +8,7 @@ const Differentials = () => {
                 </svg>
             ),
             title: "Prazo que reduz ansiedade",
-            description: "Entrega em até 30 dias úteis, com cronograma definido e compromisso real com o prazo."
+            description: "Entrega em até 40 dias úteis, com cronograma definido e compromisso real com o prazo."
         },
         {
             icon: (
@@ -17,7 +17,7 @@ const Differentials = () => {
                 </svg>
             ),
             title: "Viabilidade sem desvalorizar",
-            description: "Pagamento facilitado em até 24x no boleto, pensado para tickets altos e planejamento financeiro."
+            description: "Pagamento facilitado em até 18x no cartão, pensado para tickets altos e planejamento financeiro."
         },
         {
             icon: (

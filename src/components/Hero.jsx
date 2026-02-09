@@ -6,7 +6,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-colors z-10" />
                 {/* Fallback image before generating specific one */}
                 <img
-                    src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=2668&auto=format&fit=crop"
+                    src="/imgs/fotoherostudiokatto.webp"
                     alt="Cozinha Planejada Studio Katto"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
@@ -20,7 +20,7 @@ const Hero = () => {
                     </div>
                     <div>
                         <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Entrega</p>
-                        <p className="text-sm font-bold text-gray-900">30 Dias Úteis</p>
+                        <p className="text-sm font-bold text-gray-900">40 Dias Úteis</p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@ const Hero = () => {
                         <HeroImage className="lg:hidden mb-12 max-w-md mx-auto" />
 
                         <p className="font-sans text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            Para quem não quer esperar meses nem correr riscos em um projeto de alto valor. Projetos sob medida com acabamento premium e pagamento facilitado em até 24x.
+                            Para quem não quer esperar meses nem correr riscos em um projeto de alto valor. Projetos sob medida com acabamento premium e pagamento facilitado em até 18x.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
